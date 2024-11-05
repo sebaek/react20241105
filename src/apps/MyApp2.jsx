@@ -21,6 +21,9 @@ function MyApp2() {
 
   // component 사용시 종료태그 꼭 작성
   // (empty tag는 시작 태그에 / 꼭 작성
+
+  const a = <MyComponent />;
+
   return (
     <div>
       hello
@@ -29,6 +32,8 @@ function MyApp2() {
       <MyComponent />
       <MyComponent />
       <MyComponent></MyComponent>
+      <hr />
+      {a}
     </div>
   );
 }
