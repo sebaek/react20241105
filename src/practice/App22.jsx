@@ -13,11 +13,23 @@ function App22(props) {
         </p>
       </Comp1>
       <hr />
-      <Comp2></Comp2>
+      <Comp2>
+        <li>Lorem ipsum dolor.</li>
+        <li>Aperiam consectetur, unde.</li>
+        <li>Commodi, quod vel?</li>
+      </Comp2>
     </div>
   );
 }
 // Comp1 만들기 App22에서 넘겨준 children 두번 출력하기
+function Comp1({ children }) {
+  return (
+    <div>
+      {children}
+      {children}
+    </div>
+  );
+}
 
 function Comp2({ children }) {
   return (
