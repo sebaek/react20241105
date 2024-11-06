@@ -1,5 +1,15 @@
 import React from "react";
 
+function MyCom(props) {
+  return (
+    <div>
+      <h1>주소 : {props.address}</h1>
+      <h1>도시 : {props.city}</h1>
+      <h1>점수 : {props.score}</h1>
+    </div>
+  );
+}
+
 function App16(props) {
   return (
     <div>
