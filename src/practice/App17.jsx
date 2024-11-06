@@ -23,7 +23,19 @@ function MyCom(props) {
 function App17(props) {
   return (
     <div>
-      <MyCom />
+      <MyCom
+        fun1={() => {
+          console.log("fun1 함수");
+        }}
+        address="서울"
+        age={30}
+        readonly={true}
+        list={["donald", "harris"]}
+        product={{
+          name: "컴퓨터",
+          price: 300,
+        }}
+      />
     </div>
   );
 }
