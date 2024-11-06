@@ -14,11 +14,17 @@ function App6(props) {
   <input type="number" step="0.001" value="123.456" />
   <br />
   <h3 class="seoul"> rose </h3>
-
-
    */
 
-  return <div></div>;
+  return (
+    <div>
+      <h1 className={a}>hello</h1>
+      <h3>{a}</h3>
+      <input type="number" step={0.001} value={b} />
+      <br />
+      <h3 className={c.city}>{c.name}</h3>
+    </div>
+  );
 }
 
 export default App6;
