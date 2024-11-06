@@ -10,7 +10,13 @@ function App9(props) {
     <h1>hankang</h1>
    */
 
-  return <div></div>;
+  return (
+    <div>
+      {a.map((e) => (
+        <h1>{e}</h1>
+      ))}
+    </div>
+  );
 }
 
 export default App9;
