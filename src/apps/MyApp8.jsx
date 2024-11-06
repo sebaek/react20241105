@@ -16,9 +16,23 @@ function Comp1() {
 
   return (
     <div>
-      <li>{a.name}</li>
-      <li>{b.name}</li>
-      <li>{c.name}</li>
+      {/* && (and) true이면... */}
+      <li>{a.married && a.name}</li>
+      <li>{b.married && b.name}</li>
+      <li>{c.married && c.name}</li>
+      <hr />
+      {/* || (or) true가 아니면... */}
+      <li>{a.married || a.name}</li>
+      <li>{b.married || b.name}</li>
+      <li>{c.married || c.name}</li>
+      <hr />
+      {a.married && <li>{a.name}</li>}
+      {b.married && <li>{b.name}</li>}
+      {c.married && <li>{c.name}</li>}
+      <hr />
+      {a.married || <li>{a.name}</li>}
+      {b.married || <li>{b.name}</li>}
+      {c.married || <li>{c.name}</li>}
     </div>
   );
 }
