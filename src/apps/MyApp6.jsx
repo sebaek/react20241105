@@ -3,7 +3,10 @@ import React from "react";
 function MyApp6(props) {
   return (
     <div>
+      <Comp3 />
+      <hr />
       <Comp1 />
+      <Comp2 />
     </div>
   );
 }
@@ -45,14 +48,32 @@ function Comp2() {
   return (
     <div>
       <ul>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
+        <li>{a}</li>
+        <li>{b}</li>
+        <li>{c[0]}</li>
+        <li>{c[1]}</li>
+        <li>{c[2]}</li>
+        <li>{d.name}</li>
+        <li>{d["city"]}</li>
       </ul>
+    </div>
+  );
+}
+
+function Comp3() {
+  const a = "note";
+  const b = 3.14;
+
+  // property(prop) 의 값으로 사용 가능
+  return (
+    <div>
+      <h1>{a}</h1>
+      <h1 className={a}>Lorem.</h1>
+      <h1 className="error">Lorem.</h1>
+      <h1 className={"error"}>Lorem.</h1>
+      <input type="text" value={b} />
+      <input type="text" value="9.99" />
+      <input type="text" value={"9.99"} />
     </div>
   );
 }
