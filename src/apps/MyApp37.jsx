@@ -12,7 +12,7 @@ function MyApp37(props) {
   return (
     <div>
       <Button onClick={fun1}>값 증가</Button>
-      <Button>값 감소</Button>
+      <Button onClick={() => setNumber(number - 1)}>값 감소</Button>
       <Box>number : {number}</Box>
     </div>
   );
