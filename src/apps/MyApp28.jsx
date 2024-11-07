@@ -4,10 +4,14 @@ import { Field } from "../components/ui/field.jsx";
 import { Checkbox } from "../components/ui/checkbox.jsx";
 import { HiOutlinePlus } from "react-icons/hi";
 import { Radio, RadioGroup } from "../components/ui/radio.jsx";
+import { Switch } from "../components/ui/switch.jsx";
 
 function MyApp28(props) {
   return (
     <div style={{ margin: "10px" }}>
+      <h5>switch</h5>
+      <Switch>동의</Switch>
+      <Switch variant="raised">동의</Switch>
       <h5>radio button</h5>
       <RadioGroup>
         <Radio value={1}>option1</Radio>
