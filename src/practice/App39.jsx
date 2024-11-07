@@ -10,15 +10,21 @@ function App39(props) {
   return (
     <div>
       <Button onClick={handleButtonClick}>{number}</Button>
-      <Box display={number === 1 ? "block" : "none"} h={20} bg={"blue.300"}>
-        1
-      </Box>
-      <Box display={number === 2 ? "block" : "none"} h={20} bg={"red.300"}>
-        2
-      </Box>
-      <Box display={number === 3 ? "block" : "none"} h={20} bg={"yellow.300"}>
-        3
-      </Box>
+      {number === 1 && (
+        <Box h={20} bg={"blue.300"}>
+          1
+        </Box>
+      )}
+      {number === 2 && (
+        <Box h={20} bg={"red.300"}>
+          2
+        </Box>
+      )}
+      {number === 3 && (
+        <Box h={20} bg={"yellow.300"}>
+          3
+        </Box>
+      )}
     </div>
   );
 }
