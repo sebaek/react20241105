@@ -22,7 +22,7 @@ function MyApp31(props) {
           base: "100%",
           sm: "5/6",
           md: "2/3",
-          lg: "2/4",
+          lg: "3/6",
           xl: "1/3",
           "2xl": "1/4",
         }}
