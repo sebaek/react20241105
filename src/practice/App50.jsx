@@ -1,8 +1,12 @@
-import React, { useState } from "react";
+import React, { createContext, useContext, useState } from "react";
 import { Field } from "../components/ui/field.jsx";
 import { Box, Input } from "@chakra-ui/react";
 
-function MyBox2({ user }) {
+const UserContext = createContext({});
+
+function MyBox2() {
+  const user = useContext(UserContext);
+
   return (
     <Box>
       <p>이름 : {user.name}</p>
@@ -10,8 +14,8 @@ function MyBox2({ user }) {
     </Box>
   );
 }
-function MyBox1({ user }) {
-  return <MyBox2 user={user} />;
+function MyBox1() {
+  return <MyBox2 />;
 }
 function App50(props) {
   const [user, setUser] = useState({ name: "", email: "" });
@@ -23,7 +27,9 @@ function App50(props) {
       <Field label={"이메일"}>
         <Input onChange={(e) => setUser({ ...user, email: e.target.value })} />
       </Field>
-      <MyBox1 user={user} />
+      <UserContext.Provider value={user}>
+        <MyBox1 />
+      </UserContext.Provider>
     </div>
   );
 }
