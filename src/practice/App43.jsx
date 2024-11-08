@@ -18,20 +18,54 @@ function App43(props) {
     <div>
       <Field label={"이름"}>
         <Input
-          onChange={(e) => setPerson({ ...person, name: e.target.value })}
+          onChange={(e) => {
+            setPerson({
+              ...person,
+              info: { ...person.info },
+              name: e.target.value,
+            });
+          }}
           value={person.name}
         />
       </Field>
       <Field label={"주소"}>
-        <Input value={person.info.address} />
+        <Input
+          onChange={(e) => {
+            setPerson({
+              ...person,
+              info: { ...person.info, address: e.target.value },
+            });
+          }}
+          value={person.info.address}
+        />
       </Field>
-      <Field label={"이메일"}>
+      <Field
+        onChange={(e) => {
+          setPerson({
+            ...person,
+            info: { ...person.info, email: e.target.value },
+          });
+        }}
+        label={"이메일"}
+      >
         <Input value={person.info.email} />
       </Field>
       <Field label={"자기소개"}>
-        <Textarea value={person.info.description} />
+        <Textarea
+          onChange={(e) => {
+            setPerson({
+              ...person,
+              info: { ...person.info, description: e.target.value },
+            });
+          }}
+          value={person.info.description}
+        />
       </Field>
-      <Button colorPalette={"red"} variant={"surface"}>
+      <Button
+        onClick={() => setPerson(originPerson)}
+        colorPalette={"red"}
+        variant={"surface"}
+      >
         리셋
       </Button>
     </div>
