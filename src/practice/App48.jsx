@@ -1,34 +1,43 @@
-import React from "react";
+import React, { useState } from "react";
 import { Box, Input } from "@chakra-ui/react";
 import { Field } from "../components/ui/field.jsx";
 
-function MyForm() {
+function MyForm({ updateName, updateAddress }) {
   return (
     <Box>
       <Field label={"이름"}>
-        <Input />
+        <Input onChange={(e) => updateName(e.target.value)} />
       </Field>
       <Field label={"주소"}>
-        <Input />
+        <Input onChange={(e) => updateAddress(e.target.value)} />
       </Field>
     </Box>
   );
 }
 
-function MyBox() {
+function MyBox({ name, address }) {
   return (
     <Box>
-      <p>이름 : </p>
-      <p>주소 : </p>
+      <p>이름 : {name}</p>
+      <p>주소 : {address}</p>
     </Box>
   );
 }
 
 function App48(props) {
+  const [name, setName] = useState("");
+  const [address, setAddress] = useState("");
+  function updateName(n) {
+    setName(n);
+  }
+  function updateAddress(a) {
+    setAddress(a);
+  }
+
   return (
     <div>
-      <MyForm />
-      <MyBox />
+      <MyForm updateName={updateName} updateAddress={updateAddress} />
+      <MyBox name={name} address={address} />
     </div>
   );
 }
