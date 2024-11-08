@@ -8,6 +8,12 @@ const originInfo = { name: "홍길동", items: ["모니터", "CPU"] };
 function App44(props) {
   const [info, updateInfo] = useImmer(originInfo);
 
+  const handleButtonClick = (item) => {
+    updateInfo((draft) => {
+      draft.items.push(item);
+    });
+  };
+
   return (
     <div>
       <Field label={"이름"}>
@@ -20,10 +26,14 @@ function App44(props) {
           }
         />
       </Field>
-      <Button>키보드</Button>
-      <Button>마우스</Button>
-      <Button>핸드폰</Button>
-      <Button variant={"surface"} colorPalette={"red"}>
+      <Button onClick={() => handleButtonClick("키보드")}>키보드</Button>
+      <Button onClick={() => handleButtonClick("마우스")}>마우스</Button>
+      <Button onClick={() => handleButtonClick("핸드폰")}>핸드폰</Button>
+      <Button
+        onClick={() => updateInfo(originInfo)}
+        variant={"surface"}
+        colorPalette={"red"}
+      >
         리셋
       </Button>
       <hr />
