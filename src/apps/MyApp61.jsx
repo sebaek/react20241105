@@ -5,7 +5,20 @@ import axios from "axios";
 function MyApp61(props) {
   return (
     <div>
-      <Button>btn5</Button>
+      <Button
+        onClick={() =>
+          axios.post("/api/main1/sub9", [
+            { product: { name: "computer", price: 500 }, company: "samsung" },
+            { product: { name: "smart phone", price: 1000 }, company: "apple" },
+            {
+              product: { name: "graphic card", price: 2000 },
+              company: "nvidia",
+            },
+          ])
+        }
+      >
+        btn5
+      </Button>
       <Button
         onClick={() =>
           axios.post("/api/main1/sub8", [
