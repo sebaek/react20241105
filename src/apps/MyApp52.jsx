@@ -16,7 +16,7 @@ function MyApp52(props) {
         checked={show}
         onCheckedChange={(e) => setShow(e.checked)}
       ></Switch>
-      {show && <MyComp1 />}
+      {/*{show && <MyComp1 />}*/}
 
       <hr />
       <Box display={show ? "block" : "none"}>
