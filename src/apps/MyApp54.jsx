@@ -8,29 +8,37 @@ function MyComp1({ text }) {
   // useEffect의 두번째 파라미터 (배열 [])은
   //  useEffect의 첫번째 파라미터 (함수)의 실행을 트리거하는 값들의 목록
   useEffect(() => {
-    console.log("text나 count가 변경될 때 마다");
+    // console.log("text나 count가 변경될 때 마다");
   }, [text, count]);
 
   useEffect(() => {
-    console.log("text 변경됨");
+    // console.log("text 변경됨");
   }, [text]);
 
   useEffect(() => {
-    console.log("count 변경됨");
+    console.log("count 변경됨", count);
+
+    // 언마운트,
+    // 또는 이전 useEffect의 리턴된 함수가 현재 reder의 useEffect 함수 실행 전에 실행됨
+
+    // clean up 함수
+    return () => {
+      console.log("클린업@", count);
+    };
   }, [count]);
 
   useEffect(() => {
     // mount(initial render)
-    console.log("mount!");
+    // console.log("mount!");
 
     return () => {
       // unmount
-      console.log("unmount@");
+      // console.log("unmount@");
     };
   }, []);
 
   // mount, update
-  console.log("render...");
+  // console.log("render...");
 
   return (
     <Box>
