@@ -19,7 +19,7 @@ function MyComp1({ text }) {
     console.log("count 변경됨", count);
 
     // 언마운트,
-    // 또는 이전 useEffect의 리턴된 함수가 현재 reder의 useEffect 함수 실행 전에 실행됨
+    // 또는 이전 useEffect의 리턴된 함수가 현재 render의 useEffect 함수 실행 전에 실행됨
 
     // clean up 함수
     return () => {
