@@ -5,6 +5,21 @@ import axios from "axios";
 function MyApp65(props) {
   return (
     <div>
+      <Button>btn5</Button>
+      <Button
+        onClick={() => {
+          axios
+            .get("/api/main5/sub4")
+            .then((r) => r.data)
+            .then((d) => {
+              console.log(d);
+              console.log(d.name);
+              console.log(d.age);
+            });
+        }}
+      >
+        btn4
+      </Button>
       <Button
         onClick={() => {
           axios
