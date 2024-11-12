@@ -7,6 +7,19 @@ function MyApp62(props) {
     <div>
       <Button
         onClick={() => {
+          axios.post("/api/main2/sub4", {
+            id: 5,
+            name: "그래픽 카드",
+            available: true,
+            shops: ["코스트코", "월마트", "아마존"],
+            attribute: { name: "제조회사", value: "엔비디아" },
+          });
+        }}
+      >
+        btn4
+      </Button>
+      <Button
+        onClick={() => {
           axios.post("/api/main2/sub3", {
             name: "son",
             age: 99,
