@@ -7,7 +7,10 @@ function MyApp65(props) {
     <div>
       <Button
         onClick={() => {
-          axios.get("/api/main5/sub3");
+          axios
+            .get("/api/main5/sub3")
+            .then((r) => r.data)
+            .then((d) => console.log(d));
         }}
       >
         btn3
