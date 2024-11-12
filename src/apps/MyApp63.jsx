@@ -6,6 +6,28 @@ function MyApp63(props) {
   return (
     <div>
       <Button
+        onClick={() =>
+          axios.delete("/api/main3/sub8", {
+            data: {
+              title: "제목",
+              content: "본문",
+            },
+          })
+        }
+      >
+        delete (w/ json)
+      </Button>
+      <Button
+        onClick={() => {
+          axios.put("/api/main3/sub7", {
+            name: "kim",
+            address: "seoul",
+          });
+        }}
+      >
+        put (w/ json)
+      </Button>
+      <Button
         onClick={() => {
           axios.delete("/api/main3/sub6", {
             data: {
