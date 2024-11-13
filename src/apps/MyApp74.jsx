@@ -3,6 +3,7 @@ import {
   createBrowserRouter,
   Outlet,
   RouterProvider,
+  useLocation,
   useNavigate,
 } from "react-router-dom";
 import { Box, Flex } from "@chakra-ui/react";
@@ -25,6 +26,13 @@ const router = createBrowserRouter([
   },
 ]);
 function HomeContent() {
+  const location = useLocation();
+
+  // react-router location 객체
+  console.log(location);
+  // browser 의 location 객체
+  console.log(window.location);
+
   return <Box>홈 페이지 컨텐츠</Box>;
 }
 function SubContent1() {
