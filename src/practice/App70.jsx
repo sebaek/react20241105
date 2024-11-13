@@ -17,7 +17,12 @@ function App70(props) {
         onChange={(e) => setName(e.target.value)}
       />
       <br />
-      <input type="file" multiple onChange={(e) => setFiles(e.target.files)} />
+      <input
+        accept={"image/*"}
+        type="file"
+        multiple
+        onChange={(e) => setFiles(e.target.files)}
+      />
       <br />
       <button onClick={handleClick}>전송</button>
     </div>
