@@ -35,7 +35,20 @@ const router = createBrowserRouter([
     path: "/path2",
     element: <div>여기는 2번 경로</div>,
   },
-  { path: "/path3", element: <div>여기는 경로3</div> },
+  {
+    path: "/path3",
+    element: (
+      <div>
+        여기는 경로3 <hr />
+        <Outlet />
+      </div>
+    ),
+    children: [
+      { index: true, element: <div>경로3 홈</div> },
+      { path: "sub1", element: <div>서브1 내용</div> },
+      { path: "sub2", element: <div>서브2 내용</div> },
+    ],
+  },
   { path: "/path4", element: <div>여기는 경로4</div> },
 ]);
 
