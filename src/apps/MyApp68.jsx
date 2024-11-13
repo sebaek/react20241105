@@ -5,6 +5,9 @@ import axios from "axios";
 function MyApp68(props) {
   return (
     <div>
+      <Button>sub11경로 : 403</Button>
+      <Button>sub10경로 : 202</Button>
+      <Button>sub9경로 : 405</Button>
       <Button
         onClick={() => {
           axios.get("/api/main7/sub8");
